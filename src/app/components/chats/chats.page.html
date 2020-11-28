@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Chats</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+       <ion-col col-6>
+        <div *ngFor="let login of teams">
+          <h4  *ngIf="login.teamA != login.teamB">
+            {{login.teamA}}
+          </h4>
+        </div>
+          <ion-col>
+            <ion-button expand="block">{{count}} Goals Scored</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block">{{countYellowTeamA}} Yellow Cards</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block">{{countRedTeamA}} Red Cards</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block">{{countOffTeamA}} OffSides</ion-button>
+          </ion-col>
+       </ion-col>
+       <ion-col col-6>
+        <div *ngFor="let login of teams">
+          <h4  *ngIf="login.teamA != login.teamB">
+            {{login.teamB}}
+          </h4>
+        </div>
+        <ion-col>
+          <ion-button expand="block">{{counte}} Goals Scored</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block">{{countYellowTeamB}} Yellow Cards</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block">{{countRedTeamB}} Red Cards</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block">{{countOffTeamB}} OffSides</ion-button>
+        </ion-col>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

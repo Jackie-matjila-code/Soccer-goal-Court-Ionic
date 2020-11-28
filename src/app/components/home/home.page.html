@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-col>
+      <ion-button expand="block" (click)="goStats()">Match Stats</ion-button>
+    </ion-col>
+    <ion-row>
+       <ion-col col-6>
+          <div *ngFor="let login of teams">
+            <h4  *ngIf="login.teamA != login.teamB">
+              {{login.teamA}}
+            </h4>
+          </div>
+          <h4 class="text">{{count}}</h4>
+          <ion-col>
+            <ion-button expand="block" (click)="goCounter()">Goal Add (+1)</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" (click)="goCounterMinus()">Goal Minus (-1)</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" (click)="goYellow()">Yellow Card</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" (click)="goRed()">Red Card</ion-button>
+          </ion-col>
+          <ion-col>
+            <ion-button expand="block" (click)="goOffTeamA()">Off Side</ion-button>
+          </ion-col>
+       </ion-col>
+       <ion-col col-6>
+          <div *ngFor="let login of teams">
+            <h4 *ngIf="login.teamB != login.teamA">{{login.teamB}}</h4>
+          </div>
+        <h4 class="text">{{counte}}</h4>
+        <ion-col>
+          <ion-button expand="block" (click)="goCounta()">Goal Add (+1)</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="goCountaMini()">Goal Minus (-1)</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="goYellows()">Yellow Card</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="goReds()">Red Card</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button expand="block" (click)="goOffTeamB()">Off Side</ion-button>
+        </ion-col>
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" (click)="reset()">Reset</ion-button>
+    </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+
